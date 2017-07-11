@@ -37,6 +37,8 @@ module Shoryuken
 
       options.merge!(queue.options)
 
+      logger.debug { "Name is #{queue.name}, options are #{options}" }
+
       Shoryuken::Client.queues(queue.name).receive_messages(options)
     end
   end
